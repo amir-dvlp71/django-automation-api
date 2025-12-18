@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "4e8fbf6a-89c0-4e65-83a3-194b780b0caf",
+		"name": "Automation File Processing API",
+		"description": "Django REST API for uploading and processing CSV/Excel files with automated reports.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10884496"
+	},
+	"item": [
+		{
+			"name": "Create Automation Job",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/Projects/freelancer/sample.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/automation-jobs/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"automation-jobs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Automation Jobs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/automation-jobs/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"automation-jobs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Automation Job",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/automation-jobs/{{job_id}}/\n",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"automation-jobs",
+						"{{job_id}}",
+						"\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
