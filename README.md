@@ -35,7 +35,7 @@ GET /api/automation-jobs/{id}/
 ## Setup & Run
 
 1. Clone the repository
-git clone https://github.com/your-username/automation-api.git
+git clone https://github.com/amir-dvlp71/automation-api.git
 cd automation-api
 
 2. Create virtual environment
